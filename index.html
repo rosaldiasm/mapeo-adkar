@@ -14,13 +14,6 @@
         extend: {
           fontFamily: {
             sans: ['Poppins', 'sans-serif'],
-          },
-          colors: {
-            navy: {
-              900: '#1B2A4A',
-              800: '#243761',
-              700: '#39517A',
-            }
           }
         }
       }
@@ -49,23 +42,19 @@
     <!-- Encabezado principal -->
     <header class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8 relative overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#1B2A4A] via-[#39517A] to-[#AFC2DA]"></div>
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#E6EEF6] text-[#1B2A4A] mb-3">
-            Gestión del Cambio · Paso 2
-          </span>
-          <h1 class="text-2xl sm:text-3xl font-bold text-[#1B2A4A] tracking-tight">
-            Mapeo ADKAR por stakeholder
-          </h1>
-          <p class="text-slate-500 mt-1.5 text-sm sm:text-base font-normal">
-            Para cada stakeholder prioritario: ¿dónde está hoy y dónde necesitamos que esté?
-          </p>
-        </div>
-      </div>
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#E6EEF6] text-[#1B2A4A] mb-3">
+        Gestión del Cambio · Paso 2
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-bold text-[#1B2A4A] tracking-tight">
+        Mapeo ADKAR por stakeholder
+      </h1>
+      <p class="text-slate-500 mt-1.5 text-sm sm:text-base">
+        Para cada stakeholder prioritario: ¿dónde está hoy y dónde necesitamos que esté?
+      </p>
     </header>
 
-    <!-- Menú desplegable explicativo ADKAR -->
-    <details class="group bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden transition-all">
+    <!-- Guía rápida desplegable ADKAR -->
+    <details class="group bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
       <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none hover:bg-slate-50/80 transition">
         <div class="flex items-center gap-3">
           <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#1B2A4A] text-white text-xs font-semibold shrink-0">
@@ -75,8 +64,8 @@
             <span class="font-semibold text-[#1B2A4A] text-sm sm:text-base block">
               Guía rápida · ADKAR: cinco elementos del cambio individual
             </span>
-            <span class="text-xs text-slate-400 font-normal">
-              Haz clic aquí para desplegar las definiciones y señales de cada nivel
+            <span class="text-xs text-slate-400">
+              Haz clic aquí si necesitas recordar qué significa cada nivel antes de responder
             </span>
           </div>
         </div>
@@ -87,8 +76,7 @@
 
       <div class="p-6 pt-3 border-t border-slate-100 bg-slate-50/60">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-end">
-          <!-- A -->
-          <div class="rounded-xl p-4 bg-[#E6EEF6] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[185px] shadow-xs">
+          <div class="rounded-xl p-4 bg-[#E6EEF6] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[185px]">
             <div>
               <div class="text-xs font-bold text-amber-600">A</div>
               <div class="font-semibold text-base mt-0.5">Conciencia</div>
@@ -100,8 +88,7 @@
             </div>
           </div>
 
-          <!-- D -->
-          <div class="rounded-xl p-4 bg-[#CFDCEB] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[205px] shadow-xs">
+          <div class="rounded-xl p-4 bg-[#CFDCEB] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[205px]">
             <div>
               <div class="text-xs font-bold text-amber-600">D</div>
               <div class="font-semibold text-base mt-0.5">Deseo</div>
@@ -113,8 +100,7 @@
             </div>
           </div>
 
-          <!-- K -->
-          <div class="rounded-xl p-4 bg-[#AFC2DA] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[225px] shadow-xs">
+          <div class="rounded-xl p-4 bg-[#AFC2DA] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[225px]">
             <div>
               <div class="text-xs font-bold text-amber-600">K</div>
               <div class="font-semibold text-base mt-0.5">Conocimiento</div>
@@ -126,8 +112,7 @@
             </div>
           </div>
 
-          <!-- A -->
-          <div class="rounded-xl p-4 bg-[#39517A] text-white flex flex-col justify-between lg:min-h-[245px] shadow-xs">
+          <div class="rounded-xl p-4 bg-[#39517A] text-white flex flex-col justify-between lg:min-h-[245px]">
             <div>
               <div class="text-xs font-bold text-amber-400">A</div>
               <div class="font-semibold text-base mt-0.5">Habilidad</div>
@@ -139,8 +124,7 @@
             </div>
           </div>
 
-          <!-- R -->
-          <div class="rounded-xl p-4 bg-[#1B2A4A] text-white flex flex-col justify-between lg:min-h-[265px] shadow-xs">
+          <div class="rounded-xl p-4 bg-[#1B2A4A] text-white flex flex-col justify-between lg:min-h-[265px]">
             <div>
               <div class="text-xs font-bold text-amber-400">R</div>
               <div class="font-semibold text-base mt-0.5">Reforzamiento</div>
@@ -155,13 +139,15 @@
       </div>
     </details>
 
-    <!-- Datos de quien responde + Selector de Stakeholders -->
-    <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 space-y-5">
+    <!-- PASO 1: Datos personales -->
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6">
+      <div class="flex items-center gap-2.5 mb-4">
+        <span class="w-6 h-6 rounded-full bg-[#1B2A4A] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+        <h2 class="text-base font-semibold text-[#1B2A4A]">Tus datos</h2>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label for="responsable" class="block text-xs font-semibold text-slate-600 mb-1.5">
-            Tu nombre
-          </label>
+          <label for="responsable" class="block text-xs font-semibold text-slate-600 mb-1.5">Tu nombre</label>
           <input
             type="text"
             id="responsable"
@@ -170,9 +156,7 @@
           />
         </div>
         <div>
-          <label for="area" class="block text-xs font-semibold text-slate-600 mb-1.5">
-            Área / Unidad de negocio
-          </label>
+          <label for="area" class="block text-xs font-semibold text-slate-600 mb-1.5">Área / Unidad de negocio</label>
           <input
             type="text"
             id="area"
@@ -181,59 +165,136 @@
           />
         </div>
       </div>
+    </section>
 
+    <!-- PASO 2: Selección de Stakeholders con casillas -->
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 space-y-5">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-[#1B2A4A] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+          <h2 class="text-base font-semibold text-[#1B2A4A]">Selecciona los stakeholders que vas a evaluar</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1 ml-8.5">
+          Marca todas las casillas que apliquen. Cada grupo que marques aparecerá automáticamente como una fila en la tabla de abajo para que evalúes su nivel ADKAR.
+        </p>
+      </div>
+
+      <!-- 3 columnas por nivel -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="checkboxGrid">
+        <!-- Nivel I -->
+        <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-4 space-y-2.5">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-800 bg-sky-100 px-2.5 py-1 rounded-md">
+              I.- Obras
+            </span>
+          </div>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="I.- Obras" data-name="Jefaturas de obra" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Jefaturas de obra</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="I.- Obras" data-name="Mano de obra directa" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Mano de obra directa</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="I.- Obras" data-name="Mano de obra indirecta (supervisor, capataz)" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Mano de obra indirecta (supervisor, capataz)</span>
+          </label>
+        </div>
+
+        <!-- Nivel II -->
+        <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-4 space-y-2.5">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100 px-2.5 py-1 rounded-md">
+              II.- Oficina Central (UN)
+            </span>
+          </div>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="II.- Oficina Central (UN)" data-name="Jefaturas, gerentes, subgerentes, jefes de área" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Jefaturas, gerentes, subgerentes, jefes de área</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="II.- Oficina Central (UN)" data-name="BP" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">BP</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="II.- Oficina Central (UN)" data-name="Gcia. Técnica, Gcia. Estudios, Gcia. Negocio, BI" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Gcia. Técnica, Gcia. Estudios, Gcia. Negocio, BI</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="II.- Oficina Central (UN)" data-name="Seguridad, innovación, otros" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Seguridad, innovación, otros</span>
+          </label>
+        </div>
+
+        <!-- Nivel III -->
+        <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-4 space-y-2.5">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-200 px-2.5 py-1 rounded-md">
+              III.- Corporativo
+            </span>
+          </div>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="III.- Corporativo" data-name="Gerentes Corporativos" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Gerentes Corporativos</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="III.- Corporativo" data-name="GITD" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">GITD</span>
+          </label>
+          <label class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="stakeholder-cb mt-0.5 w-4 h-4 rounded accent-[#1B2A4A] cursor-pointer"
+              data-nivel="III.- Corporativo" data-name="Ejecutores" onchange="handleCheckboxToggle(this)" />
+            <span class="text-sm text-slate-700 leading-snug">Ejecutores</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Agregar stakeholder personalizado -->
       <div class="pt-4 border-t border-slate-100">
-        <label for="stakeholderPicker" class="block text-xs font-semibold text-slate-600 mb-2">
-          Agregar stakeholder al mapeo (agrupados por nivel)
+        <label for="customStakeholderInput" class="block text-xs font-semibold text-slate-600 mb-2">
+          ¿Necesitas incluir otro stakeholder que no está en la lista?
         </label>
-        <div class="flex flex-col md:flex-row gap-3">
-          <select
-            id="stakeholderPicker"
-            onchange="toggleCustomStakeholder()"
-            class="flex-1 rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"
-          >
-            <option value="" disabled selected>-- Selecciona un stakeholder --</option>
-            <optgroup label="I.- Obras">
-              <option value="I.- Obras|Jefaturas de obra">Jefaturas de obra</option>
-              <option value="I.- Obras|Mano de obra directa">Mano de obra directa</option>
-              <option value="I.- Obras|Mano de obra indirecta (supervisor, capataz)">Mano de obra indirecta (supervisor, capataz)</option>
-            </optgroup>
-            <optgroup label="II.- Oficina Central (UN)">
-              <option value="II.- Oficina Central (UN)|Jefaturas, gerentes, subgerentes, jefes de área">Jefaturas, gerentes, subgerentes, jefes de área</option>
-              <option value="II.- Oficina Central (UN)|BP">BP</option>
-              <option value="II.- Oficina Central (UN)|Gcia. Técnica, Gcia. Estudios, Gcia. Negocio, BI">Gcia. Técnica, Gcia. Estudios, Gcia. Negocio, BI</option>
-              <option value="II.- Oficina Central (UN)|Seguridad, innovación, otros">Seguridad, innovación, otros</option>
-            </optgroup>
-            <optgroup label="III.- Corporativo">
-              <option value="III.- Corporativo|Gerentes Corporativos">Gerentes Corporativos</option>
-              <option value="III.- Corporativo|GITD">GITD</option>
-              <option value="III.- Corporativo|Ejecutores">Ejecutores</option>
-            </optgroup>
-            <optgroup label="Otros">
-              <option value="__CUSTOM__">+ Agregar otro stakeholder nuevo...</option>
-            </optgroup>
-          </select>
-
+        <div class="flex flex-col sm:flex-row gap-2.5">
           <input
             type="text"
             id="customStakeholderInput"
-            placeholder="Escribe el nombre del nuevo stakeholder..."
-            class="hidden flex-1 rounded-xl border border-[#1B2A4A] px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20"
+            placeholder="Ej.: Subcontratistas, Proveedores clave..."
+            onkeydown="if(event.key==='Enter'){ event.preventDefault(); addCustomStakeholder(); }"
+            class="flex-1 rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"
           />
-
           <button
             type="button"
-            onclick="addSelectedStakeholder()"
-            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#1B2A4A] text-white hover:bg-[#243761] text-sm font-medium shadow-xs transition cursor-pointer shrink-0"
+            onclick="addCustomStakeholder()"
+            class="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl border border-[#1B2A4A] text-[#1B2A4A] bg-white hover:bg-[#1B2A4A] hover:text-white text-sm font-medium transition cursor-pointer shrink-0"
           >
-            <span>+ Agregar a la tabla</span>
+            + Agregar otro
           </button>
         </div>
       </div>
     </section>
 
-    <!-- Tabla / Tarjetas adaptables -->
+    <!-- PASO 3: Tabla ADKAR -->
     <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
+      <div class="p-6 pb-4 border-b border-slate-100">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-[#1B2A4A] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
+          <h2 class="text-base font-semibold text-[#1B2A4A]">Completa el mapeo ADKAR</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1 ml-8.5">
+          Los campos <strong class="text-slate-700">Nivel ADKAR hoy</strong> y <strong class="text-slate-700">¿Dónde queremos que esté?</strong> son obligatorios. Las preguntas abiertas son opcionales pero muy útiles para el plan de acción.
+        </p>
+      </div>
+
       <!-- Encabezado escritorio -->
       <div class="hidden lg:grid lg:grid-cols-[1.5fr_1.9fr_1.15fr_1.15fr_1.9fr_44px] bg-[#1B2A4A] text-white text-xs font-semibold tracking-wide">
         <div class="py-4 px-4">Stakeholder</div>
@@ -277,7 +338,7 @@
       <!-- Estado vacío -->
       <div id="emptyState" class="py-12 px-6 text-center">
         <p class="text-slate-500 text-sm">
-          Aún no has agregado stakeholders. Elige uno en el menú desplegable de arriba y presiona <strong class="text-[#1B2A4A]">"+ Agregar a la tabla"</strong>.
+          Marca al menos una casilla en el <strong class="text-[#1B2A4A]">Paso 2</strong> para que aparezcan aquí tus stakeholders.
         </p>
       </div>
 
@@ -299,7 +360,7 @@
             type="button"
             id="submitBtn"
             onclick="submitData()"
-            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#1B2A4A] text-white hover:bg-[#243761] text-sm font-medium shadow-xs transition cursor-pointer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#1B2A4A] text-white hover:bg-[#243761] text-sm font-medium transition cursor-pointer"
           >
             Enviar respuestas
           </button>
@@ -340,49 +401,38 @@
       return "bg-emerald-100 text-emerald-800";
     }
 
-    function toggleCustomStakeholder() {
-      const picker = document.getElementById("stakeholderPicker");
-      const customInput = document.getElementById("customStakeholderInput");
-      if (picker.value === "__CUSTOM__") {
-        customInput.classList.remove("hidden");
-        customInput.focus();
-      } else {
-        customInput.classList.add("hidden");
-        customInput.value = "";
-      }
+    function makeKey(nivel, name) {
+      return `${nivel}::${name}`;
     }
 
-    function addSelectedStakeholder() {
-      const picker = document.getElementById("stakeholderPicker");
-      const customInput = document.getElementById("customStakeholderInput");
-      const rawValue = picker.value;
+    function handleCheckboxToggle(checkbox) {
+      const nivel = checkbox.dataset.nivel;
+      const name = checkbox.dataset.name;
+      const key = makeKey(nivel, name);
 
-      if (!rawValue) {
-        showStatus("Primero selecciona un stakeholder de la lista.", "error");
+      if (checkbox.checked) {
+        addRow(nivel, name, key);
+      } else {
+        const existingRow = document.querySelector(`.data-row[data-key="${CSS.escape(key)}"]`);
+        if (existingRow) existingRow.remove();
+        updateEmptyState();
+      }
+      hideStatus();
+    }
+
+    function addCustomStakeholder() {
+      const input = document.getElementById("customStakeholderInput");
+      const name = input.value.trim();
+      if (!name) {
+        showStatus("Escribe el nombre del stakeholder antes de agregarlo.", "error");
+        input.focus();
         return;
       }
 
-      let nivel = "Otro";
-      let stakeholder = "";
-
-      if (rawValue === "__CUSTOM__") {
-        const nuevo = customInput.value.trim();
-        if (!nuevo) {
-          showStatus("Escribe el nombre del nuevo stakeholder antes de agregarlo.", "error");
-          customInput.focus();
-          return;
-        }
-        stakeholder = nuevo;
-        customInput.value = "";
-        customInput.classList.add("hidden");
-      } else {
-        const parts = rawValue.split("|");
-        nivel = parts[0];
-        stakeholder = parts[1];
-      }
-
-      addRow(nivel, stakeholder);
-      picker.value = "";
+      const nivel = "Otro";
+      const key = makeKey(nivel, name + "_" + Date.now());
+      addRow(nivel, name, key);
+      input.value = "";
       hideStatus();
     }
 
@@ -391,13 +441,14 @@
         options.map(opt => `<option value="${opt}">${opt}</option>`).join("");
     }
 
-    function addRow(nivel, stakeholderName) {
+    function addRow(nivel, stakeholderName, key) {
       document.getElementById("emptyState").classList.add("hidden");
       const container = document.getElementById("rowsContainer");
       const row = document.createElement("div");
       row.className = "data-row p-5 lg:p-0 bg-white hover:bg-slate-50/60 transition grid grid-cols-1 gap-4 lg:gap-0 lg:grid-cols-[1.5fr_1.9fr_1.15fr_1.15fr_1.9fr_44px] items-start";
       row.dataset.nivel = nivel;
       row.dataset.stakeholder = stakeholderName;
+      row.dataset.key = key;
 
       const badgeStyle = getLevelBadgeStyle(nivel);
 
@@ -411,7 +462,7 @@
               ${stakeholderName}
             </div>
           </div>
-          <button type="button" onclick="removeRow(this)" title="Eliminar fila"
+          <button type="button" onclick="removeRow(this)" title="Quitar stakeholder"
             class="lg:hidden text-slate-400 hover:text-rose-600 font-bold text-xl px-2 py-0.5 rounded-lg hover:bg-rose-50 transition cursor-pointer">
             &times;
           </button>
@@ -446,7 +497,7 @@
         </div>
 
         <div class="hidden lg:flex items-center justify-center pt-4">
-          <button type="button" onclick="removeRow(this)" title="Eliminar fila"
+          <button type="button" onclick="removeRow(this)" title="Quitar stakeholder"
             class="text-slate-400 hover:text-rose-600 font-bold text-lg w-8 h-8 rounded-lg hover:bg-rose-50 transition cursor-pointer flex items-center justify-center">
             &times;
           </button>
@@ -457,9 +508,26 @@
     }
 
     function removeRow(btn) {
-      btn.closest(".data-row").remove();
+      const row = btn.closest(".data-row");
+      const nivel = row.dataset.nivel;
+      const name = row.dataset.stakeholder;
+
+      // Desmarcar la casilla correspondiente si existe
+      const matchingCb = document.querySelector(
+        `.stakeholder-cb[data-nivel="${CSS.escape(nivel)}"][data-name="${CSS.escape(name)}"]`
+      );
+      if (matchingCb) matchingCb.checked = false;
+
+      row.remove();
+      updateEmptyState();
+    }
+
+    function updateEmptyState() {
+      const emptyState = document.getElementById("emptyState");
       if (document.querySelectorAll(".data-row").length === 0) {
-        document.getElementById("emptyState").classList.remove("hidden");
+        emptyState.classList.remove("hidden");
+      } else {
+        emptyState.classList.add("hidden");
       }
     }
 
@@ -469,7 +537,7 @@
       const rows = document.querySelectorAll(".data-row");
 
       if (rows.length === 0) {
-        showStatus("Agrega al menos un stakeholder antes de continuar.", "error");
+        showStatus("Marca al menos un stakeholder en el Paso 2 antes de continuar.", "error");
         return null;
       }
 
