@@ -4,11 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paso 2 · Mapeo ADKAR por stakeholder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              900: '#1B2A4A',
+              800: '#243761',
+              700: '#39517A',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
     textarea {
       field-sizing: content;
-      min-height: 44px;
+      min-height: 46px;
     }
     details > summary {
       list-style: none;
@@ -18,216 +42,256 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen py-6 px-3 sm:px-6 lg:px-8">
+<body class="bg-[#F4F6F9] text-slate-800 antialiased min-h-screen py-8 px-4 sm:px-6 lg:px-8">
 
-  <div class="max-w-7xl mx-auto">
-    <!-- Encabezado -->
-    <div class="mb-5">
-      <h1 class="text-2xl sm:text-3xl font-bold text-[#1B2A4A] tracking-tight">
-        Paso 2 · Mapeo ADKAR por stakeholder
-      </h1>
-      <p class="text-slate-600 mt-1 text-sm sm:text-base">
-        Para cada stakeholder prioritario: ¿dónde está hoy y dónde necesitamos que esté?
-      </p>
-    </div>
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Encabezado principal -->
+    <header class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#1B2A4A] via-[#39517A] to-[#AFC2DA]"></div>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#E6EEF6] text-[#1B2A4A] mb-3">
+            Gestión del Cambio · Paso 2
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-bold text-[#1B2A4A] tracking-tight">
+            Mapeo ADKAR por stakeholder
+          </h1>
+          <p class="text-slate-500 mt-1.5 text-sm sm:text-base font-normal">
+            Para cada stakeholder prioritario: ¿dónde está hoy y dónde necesitamos que esté?
+          </p>
+        </div>
+      </div>
+    </header>
 
     <!-- Menú desplegable explicativo ADKAR -->
-    <details class="group bg-white rounded-xl shadow-sm border border-slate-200 mb-5 overflow-hidden">
-      <summary class="flex items-center justify-between p-4 cursor-pointer select-none hover:bg-slate-50 transition">
-        <div class="flex items-center gap-2.5">
-          <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#1B2A4A] text-white text-xs font-bold">?</span>
-          <span class="font-semibold text-[#1B2A4A] text-sm sm:text-base">
-            ADKAR: cinco elementos del cambio individual (clic para ver guía)
+    <details class="group bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden transition-all">
+      <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none hover:bg-slate-50/80 transition">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#1B2A4A] text-white text-xs font-semibold shrink-0">
+            ?
           </span>
+          <div>
+            <span class="font-semibold text-[#1B2A4A] text-sm sm:text-base block">
+              Guía rápida · ADKAR: cinco elementos del cambio individual
+            </span>
+            <span class="text-xs text-slate-400 font-normal">
+              Haz clic aquí para desplegar las definiciones y señales de cada nivel
+            </span>
+          </div>
         </div>
-        <svg class="w-5 h-5 text-slate-500 transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </summary>
 
-      <div class="p-4 pt-2 border-t border-slate-100 bg-slate-50/50">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-end">
-          <!-- A - Conciencia -->
-          <div class="rounded-lg p-4 bg-[#E6EEF6] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[180px]">
+      <div class="p-6 pt-3 border-t border-slate-100 bg-slate-50/60">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-end">
+          <!-- A -->
+          <div class="rounded-xl p-4 bg-[#E6EEF6] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[185px] shadow-xs">
             <div>
               <div class="text-xs font-bold text-amber-600">A</div>
-              <div class="font-bold text-base">Conciencia</div>
-              <div class="text-xs italic opacity-75 mb-2">Awareness</div>
+              <div class="font-semibold text-base mt-0.5">Conciencia</div>
+              <div class="text-[11px] italic opacity-75 mb-2.5">Awareness</div>
               <p class="text-xs leading-relaxed">Entiende por qué es necesario cambiar.</p>
             </div>
-            <div class="mt-3 pt-2 border-t border-[#1B2A4A]/20 text-[11px] opacity-90">
-              <strong>Señal:</strong> puede explicar por qué ahora.
+            <div class="mt-3 pt-2.5 border-t border-[#1B2A4A]/15 text-[11px]">
+              <span class="font-semibold">Señal:</span> puede explicar por qué ahora.
             </div>
           </div>
 
-          <!-- D - Deseo -->
-          <div class="rounded-lg p-4 bg-[#CFDCEB] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[200px]">
+          <!-- D -->
+          <div class="rounded-xl p-4 bg-[#CFDCEB] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[205px] shadow-xs">
             <div>
               <div class="text-xs font-bold text-amber-600">D</div>
-              <div class="font-bold text-base">Deseo</div>
-              <div class="text-xs italic opacity-75 mb-2">Desire</div>
+              <div class="font-semibold text-base mt-0.5">Deseo</div>
+              <div class="text-[11px] italic opacity-75 mb-2.5">Desire</div>
               <p class="text-xs leading-relaxed">Quiere participar y apoyar el cambio.</p>
             </div>
-            <div class="mt-3 pt-2 border-t border-[#1B2A4A]/20 text-[11px] opacity-90">
-              <strong>Señal:</strong> se suma por decisión propia.
+            <div class="mt-3 pt-2.5 border-t border-[#1B2A4A]/15 text-[11px]">
+              <span class="font-semibold">Señal:</span> se suma por decisión propia.
             </div>
           </div>
 
-          <!-- K - Conocimiento -->
-          <div class="rounded-lg p-4 bg-[#AFC2DA] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[220px]">
+          <!-- K -->
+          <div class="rounded-xl p-4 bg-[#AFC2DA] text-[#1B2A4A] flex flex-col justify-between lg:min-h-[225px] shadow-xs">
             <div>
               <div class="text-xs font-bold text-amber-600">K</div>
-              <div class="font-bold text-base">Conocimiento</div>
-              <div class="text-xs italic opacity-75 mb-2">Knowledge</div>
+              <div class="font-semibold text-base mt-0.5">Conocimiento</div>
+              <div class="text-[11px] italic opacity-75 mb-2.5">Knowledge</div>
               <p class="text-xs leading-relaxed">Sabe qué hacer y cómo hacerlo.</p>
             </div>
-            <div class="mt-3 pt-2 border-t border-[#1B2A4A]/20 text-[11px] opacity-90">
-              <strong>Señal:</strong> conoce las nuevas herramientas y procesos.
+            <div class="mt-3 pt-2.5 border-t border-[#1B2A4A]/15 text-[11px]">
+              <span class="font-semibold">Señal:</span> conoce las nuevas herramientas y procesos.
             </div>
           </div>
 
-          <!-- A - Habilidad -->
-          <div class="rounded-lg p-4 bg-[#39517A] text-white flex flex-col justify-between lg:min-h-[240px]">
+          <!-- A -->
+          <div class="rounded-xl p-4 bg-[#39517A] text-white flex flex-col justify-between lg:min-h-[245px] shadow-xs">
             <div>
               <div class="text-xs font-bold text-amber-400">A</div>
-              <div class="font-bold text-base">Habilidad</div>
-              <div class="text-xs italic opacity-80 mb-2">Ability</div>
+              <div class="font-semibold text-base mt-0.5">Habilidad</div>
+              <div class="text-[11px] italic opacity-80 mb-2.5">Ability</div>
               <p class="text-xs leading-relaxed">Logra aplicar el cambio en su trabajo diario.</p>
             </div>
-            <div class="mt-3 pt-2 border-t border-white/25 text-[11px] opacity-90">
-              <strong>Señal:</strong> trabaja de la nueva forma con resultados.
+            <div class="mt-3 pt-2.5 border-t border-white/20 text-[11px]">
+              <span class="font-semibold">Señal:</span> trabaja de la nueva forma con resultados.
             </div>
           </div>
 
-          <!-- R - Reforzamiento -->
-          <div class="rounded-lg p-4 bg-[#1B2A4A] text-white flex flex-col justify-between lg:min-h-[260px]">
+          <!-- R -->
+          <div class="rounded-xl p-4 bg-[#1B2A4A] text-white flex flex-col justify-between lg:min-h-[265px] shadow-xs">
             <div>
               <div class="text-xs font-bold text-amber-400">R</div>
-              <div class="font-bold text-base">Reforzamiento</div>
-              <div class="text-xs italic opacity-80 mb-2">Reinforcement</div>
+              <div class="font-semibold text-base mt-0.5">Reforzamiento</div>
+              <div class="text-[11px] italic opacity-80 mb-2.5">Reinforcement</div>
               <p class="text-xs leading-relaxed">Sostiene el cambio en el tiempo.</p>
             </div>
-            <div class="mt-3 pt-2 border-t border-white/25 text-[11px] opacity-90">
-              <strong>Señal:</strong> no vuelve a lo antiguo y lo impulsa con otros.
+            <div class="mt-3 pt-2.5 border-t border-white/20 text-[11px]">
+              <span class="font-semibold">Señal:</span> no vuelve a lo antiguo y lo impulsa con otros.
             </div>
           </div>
         </div>
       </div>
     </details>
 
-    <!-- Datos de quien responde -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 mb-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label for="responsable" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
-          Tu nombre
+    <!-- Datos de quien responde + Selector de Stakeholders -->
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 space-y-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="responsable" class="block text-xs font-semibold text-slate-600 mb-1.5">
+            Tu nombre
+          </label>
+          <input
+            type="text"
+            id="responsable"
+            placeholder="Ej.: Juan Pérez"
+            class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"
+          />
+        </div>
+        <div>
+          <label for="area" class="block text-xs font-semibold text-slate-600 mb-1.5">
+            Área / Unidad de negocio
+          </label>
+          <input
+            type="text"
+            id="area"
+            placeholder="Ej.: Operaciones / Terreno"
+            class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"
+          />
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100">
+        <label for="stakeholderPicker" class="block text-xs font-semibold text-slate-600 mb-2">
+          Agregar stakeholder al mapeo (agrupados por nivel)
         </label>
-        <input
-          type="text"
-          id="responsable"
-          placeholder="Ej.: Juan Pérez"
-          class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"
-        />
-      </div>
-      <div>
-        <label for="area" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
-          Área / Unidad de negocio
-        </label>
-        <input
-          type="text"
-          id="area"
-          placeholder="Ej.: Operaciones / Terreno"
-          class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"
-        />
-      </div>
-    </div>
+        <div class="flex flex-col md:flex-row gap-3">
+          <select
+            id="stakeholderPicker"
+            onchange="toggleCustomStakeholder()"
+            class="flex-1 rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"
+          >
+            <option value="" disabled selected>-- Selecciona un stakeholder --</option>
+            <optgroup label="I.- Obras">
+              <option value="I.- Obras|Jefaturas de obra">Jefaturas de obra</option>
+              <option value="I.- Obras|Mano de obra directa">Mano de obra directa</option>
+              <option value="I.- Obras|Mano de obra indirecta (supervisor, capataz)">Mano de obra indirecta (supervisor, capataz)</option>
+            </optgroup>
+            <optgroup label="II.- Oficina Central (UN)">
+              <option value="II.- Oficina Central (UN)|Jefaturas, gerentes, subgerentes, jefes de área">Jefaturas, gerentes, subgerentes, jefes de área</option>
+              <option value="II.- Oficina Central (UN)|BP">BP</option>
+              <option value="II.- Oficina Central (UN)|Gcia. Técnica, Gcia. Estudios, Gcia. Negocio, BI">Gcia. Técnica, Gcia. Estudios, Gcia. Negocio, BI</option>
+              <option value="II.- Oficina Central (UN)|Seguridad, innovación, otros">Seguridad, innovación, otros</option>
+            </optgroup>
+            <optgroup label="III.- Corporativo">
+              <option value="III.- Corporativo|Gerentes Corporativos">Gerentes Corporativos</option>
+              <option value="III.- Corporativo|GITD">GITD</option>
+              <option value="III.- Corporativo|Ejecutores">Ejecutores</option>
+            </optgroup>
+            <optgroup label="Otros">
+              <option value="__CUSTOM__">+ Agregar otro stakeholder nuevo...</option>
+            </optgroup>
+          </select>
 
-    <!-- Selector de Stakeholders antes de la tabla -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 mb-5">
-      <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-        Selecciona un stakeholder para agregar a tu mapeo (o crea uno nuevo)
-      </label>
-      <div class="flex flex-col sm:flex-row gap-2.5">
-        <select
-          id="stakeholderPicker"
-          onchange="toggleCustomStakeholder()"
-          class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"
-        >
-          <!-- Opciones generadas por JS -->
-        </select>
+          <input
+            type="text"
+            id="customStakeholderInput"
+            placeholder="Escribe el nombre del nuevo stakeholder..."
+            class="hidden flex-1 rounded-xl border border-[#1B2A4A] px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20"
+          />
 
-        <input
-          type="text"
-          id="customStakeholderInput"
-          placeholder="Escribe el nuevo stakeholder..."
-          class="hidden flex-1 rounded-lg border border-[#1B2A4A] px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30"
-        />
-
-        <button
-          type="button"
-          onclick="addSelectedStakeholder()"
-          class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-[#1B2A4A] text-white hover:bg-[#273c69] text-sm font-medium transition cursor-pointer shrink-0"
-        >
-          + Agregar a la tabla
-        </button>
+          <button
+            type="button"
+            onclick="addSelectedStakeholder()"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#1B2A4A] text-white hover:bg-[#243761] text-sm font-medium shadow-xs transition cursor-pointer shrink-0"
+          >
+            <span>+ Agregar a la tabla</span>
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Tabla / Tarjetas adaptables -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-      <!-- Encabezado solo visible en pantallas grandes -->
-      <div class="hidden lg:grid lg:grid-cols-[1.2fr_2fr_1.2fr_1.2fr_2fr_40px] bg-[#1B2A4A] text-white text-xs font-semibold">
-        <div class="py-3.5 px-4">Stakeholder</div>
-        <div class="py-3.5 px-4">¿Qué sabe o piensa hoy del cambio?</div>
-        <div class="py-3.5 px-4">Nivel ADKAR hoy <span class="text-red-300">*</span></div>
-        <div class="py-3.5 px-4">¿Dónde queremos que esté? <span class="text-red-300">*</span></div>
-        <div class="py-3.5 px-4">¿Qué necesita de nosotros?</div>
-        <div class="py-3.5 px-2 text-center"></div>
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden">
+      <!-- Encabezado escritorio -->
+      <div class="hidden lg:grid lg:grid-cols-[1.5fr_1.9fr_1.15fr_1.15fr_1.9fr_44px] bg-[#1B2A4A] text-white text-xs font-semibold tracking-wide">
+        <div class="py-4 px-4">Stakeholder</div>
+        <div class="py-4 px-4">¿Qué sabe o piensa hoy del cambio?</div>
+        <div class="py-4 px-4">Nivel ADKAR hoy <span class="text-rose-300">*</span></div>
+        <div class="py-4 px-4">¿Dónde queremos que esté? <span class="text-rose-300">*</span></div>
+        <div class="py-4 px-4">¿Qué necesita de nosotros?</div>
+        <div class="py-4 px-2 text-center"></div>
       </div>
 
       <!-- Fila de ejemplo fija -->
-      <div class="bg-[#FBEBD2]/80 text-slate-700 italic border-b border-slate-200 p-4 lg:p-0 lg:grid lg:grid-cols-[1.2fr_2fr_1.2fr_1.2fr_2fr_40px] text-sm">
-        <div class="lg:py-3 lg:px-4 font-medium mb-1 lg:mb-0">
-          <span class="lg:hidden text-[11px] uppercase not-italic font-bold text-slate-500 block">Ejemplo:</span>
-          Ejemplo: [jefes de obra]
+      <div class="bg-[#FEF5E7] text-slate-700 border-b border-amber-200/70 p-4 lg:p-0 lg:grid lg:grid-cols-[1.5fr_1.9fr_1.15fr_1.15fr_1.9fr_44px] text-xs sm:text-sm items-center">
+        <div class="lg:py-3.5 lg:px-4 mb-2 lg:mb-0">
+          <span class="inline-block px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider bg-amber-200/80 text-amber-900 mb-1">
+            Ejemplo · I.- Obras
+          </span>
+          <div class="font-medium italic text-slate-800">Jefes de obra</div>
         </div>
-        <div class="lg:py-3 lg:px-4 mb-1 lg:mb-0">
-          <span class="lg:hidden text-[11px] uppercase not-italic font-bold text-slate-500">Piensa hoy: </span>
+        <div class="lg:py-3.5 lg:px-4 mb-1.5 lg:mb-0 italic">
+          <span class="lg:hidden font-semibold not-italic text-slate-500 text-xs">Piensa hoy: </span>
           Ve la innovación como algo corporativo, lejano a la obra
         </div>
-        <div class="lg:py-3 lg:px-4 mb-1 lg:mb-0">
-          <span class="lg:hidden text-[11px] uppercase not-italic font-bold text-slate-500">ADKAR hoy: </span>
+        <div class="lg:py-3.5 lg:px-4 mb-1.5 lg:mb-0 italic">
+          <span class="lg:hidden font-semibold not-italic text-slate-500 text-xs">ADKAR hoy: </span>
           Conciencia
         </div>
-        <div class="lg:py-3 lg:px-4 mb-1 lg:mb-0">
-          <span class="lg:hidden text-[11px] uppercase not-italic font-bold text-slate-500">Objetivo: </span>
+        <div class="lg:py-3.5 lg:px-4 mb-1.5 lg:mb-0 italic">
+          <span class="lg:hidden font-semibold not-italic text-slate-500 text-xs">Objetivo: </span>
           Habilidad
         </div>
-        <div class="lg:py-3 lg:px-4">
-          <span class="lg:hidden text-[11px] uppercase not-italic font-bold text-slate-500">Necesita: </span>
+        <div class="lg:py-3.5 lg:px-4 italic">
+          <span class="lg:hidden font-semibold not-italic text-slate-500 text-xs">Necesita: </span>
           Ejemplos de terreno y tiempo para probar
         </div>
-        <div class="hidden lg:flex items-center justify-center text-xs text-slate-400">Ref.</div>
+        <div class="hidden lg:flex items-center justify-center text-[11px] font-medium text-amber-700/70">Ref.</div>
       </div>
 
-      <!-- Contenedor de filas dinámicas -->
-      <div id="rowsContainer" class="divide-y divide-slate-200"></div>
+      <!-- Filas dinámicas -->
+      <div id="rowsContainer" class="divide-y divide-slate-200/80"></div>
 
-      <!-- Mensaje cuando no hay filas -->
-      <div id="emptyState" class="p-8 text-center text-slate-500 text-sm">
-        Selecciona un stakeholder arriba y presiona <strong>"+ Agregar a la tabla"</strong> para comenzar.
+      <!-- Estado vacío -->
+      <div id="emptyState" class="py-12 px-6 text-center">
+        <p class="text-slate-500 text-sm">
+          Aún no has agregado stakeholders. Elige uno en el menú desplegable de arriba y presiona <strong class="text-[#1B2A4A]">"+ Agregar a la tabla"</strong>.
+        </p>
       </div>
 
-      <!-- Barra inferior de acciones -->
-      <div class="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+      <!-- Pie con acciones -->
+      <div class="p-5 bg-slate-50/80 border-t border-slate-200/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         <p class="text-xs text-slate-500">
-          <span class="text-red-500 font-bold">*</span> Campos obligatorios: Nivel ADKAR hoy y ¿Dónde queremos que esté?
+          <span class="text-rose-500 font-bold">*</span> Obligatorios: <strong>Nivel ADKAR hoy</strong> y <strong>¿Dónde queremos que esté?</strong>
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-2">
+        <div class="flex flex-col sm:flex-row gap-2.5">
           <button
             type="button"
             onclick="exportCSV()"
-            class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-100 text-sm font-medium transition cursor-pointer"
+            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 bg-white hover:bg-slate-100 text-sm font-medium transition cursor-pointer"
           >
             Descargar Excel (.csv)
           </button>
@@ -235,33 +299,22 @@
             type="button"
             id="submitBtn"
             onclick="submitData()"
-            class="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-lg bg-[#1B2A4A] text-white hover:bg-[#273c69] text-sm font-medium transition cursor-pointer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#1B2A4A] text-white hover:bg-[#243761] text-sm font-medium shadow-xs transition cursor-pointer"
           >
             Enviar respuestas
           </button>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Mensaje de estado -->
-    <div id="statusMsg" class="hidden mt-4 p-3 rounded-lg text-sm font-medium"></div>
+    <div id="statusMsg" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
   </div>
 
   <script>
-    // 1. Pega aquí tu URL de Power Automate o Google Apps Script para guardar automáticamente:
+    // Pega aquí tu URL de Power Automate o Google Apps Script cuando conectes el guardado automático:
     const WEBHOOK_URL = "";
-
-    // 2. Edita aquí tu lista base de stakeholders:
-    const STAKEHOLDERS_LIST = [
-      "Jefes de obra",
-      "Administradores de obra",
-      "Gerentes de proyecto",
-      "Oficina Técnica",
-      "Prevención de Riesgos",
-      "Calidad",
-      "Subcontratistas",
-      "Gerencia General"
-    ];
 
     const ADKAR_HOY = [
       "Ninguno / Desconoce",
@@ -280,12 +333,11 @@
       "Reforzamiento"
     ];
 
-    function renderStakeholderPicker() {
-      const picker = document.getElementById("stakeholderPicker");
-      picker.innerHTML =
-        `<option value="" disabled selected>-- Elige un stakeholder --</option>` +
-        STAKEHOLDERS_LIST.map(s => `<option value="${s}">${s}</option>`).join("") +
-        `<option value="__CUSTOM__">+ Otro (escribir nuevo)...</option>`;
+    function getLevelBadgeStyle(nivel) {
+      if (nivel.includes("Obras")) return "bg-sky-100 text-sky-800";
+      if (nivel.includes("Oficina Central")) return "bg-indigo-100 text-indigo-800";
+      if (nivel.includes("Corporativo")) return "bg-slate-200 text-slate-800";
+      return "bg-emerald-100 text-emerald-800";
     }
 
     function toggleCustomStakeholder() {
@@ -303,91 +355,99 @@
     function addSelectedStakeholder() {
       const picker = document.getElementById("stakeholderPicker");
       const customInput = document.getElementById("customStakeholderInput");
-      let selected = picker.value;
+      const rawValue = picker.value;
 
-      if (!selected) {
+      if (!rawValue) {
         showStatus("Primero selecciona un stakeholder de la lista.", "error");
         return;
       }
 
-      if (selected === "__CUSTOM__") {
+      let nivel = "Otro";
+      let stakeholder = "";
+
+      if (rawValue === "__CUSTOM__") {
         const nuevo = customInput.value.trim();
         if (!nuevo) {
           showStatus("Escribe el nombre del nuevo stakeholder antes de agregarlo.", "error");
           customInput.focus();
           return;
         }
-        selected = nuevo;
-        if (!STAKEHOLDERS_LIST.includes(nuevo)) {
-          STAKEHOLDERS_LIST.push(nuevo);
-          renderStakeholderPicker();
-        }
+        stakeholder = nuevo;
         customInput.value = "";
         customInput.classList.add("hidden");
+      } else {
+        const parts = rawValue.split("|");
+        nivel = parts[0];
+        stakeholder = parts[1];
       }
 
-      addRow(selected);
+      addRow(nivel, stakeholder);
       picker.value = "";
       hideStatus();
     }
 
-    function buildOptions(options, selectedVal = "") {
-      return `<option value="" disabled ${selectedVal ? "" : "selected"}>Seleccionar...</option>` +
-        options.map(opt => `<option value="${opt}" ${opt === selectedVal ? "selected" : ""}>${opt}</option>`).join("");
+    function buildOptions(options) {
+      return `<option value="" disabled selected>Seleccionar...</option>` +
+        options.map(opt => `<option value="${opt}">${opt}</option>`).join("");
     }
 
-    function addRow(stakeholderName) {
+    function addRow(nivel, stakeholderName) {
       document.getElementById("emptyState").classList.add("hidden");
       const container = document.getElementById("rowsContainer");
       const row = document.createElement("div");
-      row.className = "data-row p-4 lg:p-0 bg-white hover:bg-slate-50/60 transition grid grid-cols-1 gap-3 lg:gap-0 lg:grid-cols-[1.2fr_2fr_1.2fr_1.2fr_2fr_40px] items-start";
+      row.className = "data-row p-5 lg:p-0 bg-white hover:bg-slate-50/60 transition grid grid-cols-1 gap-4 lg:gap-0 lg:grid-cols-[1.5fr_1.9fr_1.15fr_1.15fr_1.9fr_44px] items-start";
+      row.dataset.nivel = nivel;
+      row.dataset.stakeholder = stakeholderName;
+
+      const badgeStyle = getLevelBadgeStyle(nivel);
 
       row.innerHTML = `
-        <div class="lg:p-2.5 flex items-center justify-between lg:block">
-          <div class="w-full">
-            <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">Stakeholder</label>
-            <select name="stakeholder"
-              class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm font-medium text-[#1B2A4A] bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30">
-              ${STAKEHOLDERS_LIST.map(s => `<option value="${s}" ${s === stakeholderName ? "selected" : ""}>${s}</option>`).join("")}
-            </select>
+        <div class="lg:p-3.5 flex items-start justify-between gap-2">
+          <div>
+            <span class="inline-block px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wide ${badgeStyle} mb-1">
+              ${nivel}
+            </span>
+            <div class="text-sm font-semibold text-[#1B2A4A] leading-snug">
+              ${stakeholderName}
+            </div>
           </div>
           <button type="button" onclick="removeRow(this)" title="Eliminar fila"
-            class="lg:hidden ml-2 mt-5 text-slate-400 hover:text-red-600 font-bold text-xl px-2 py-1 cursor-pointer">
+            class="lg:hidden text-slate-400 hover:text-rose-600 font-bold text-xl px-2 py-0.5 rounded-lg hover:bg-rose-50 transition cursor-pointer">
             &times;
           </button>
         </div>
 
-        <div class="lg:p-2.5">
+        <div class="lg:p-3">
           <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">¿Qué sabe o piensa hoy del cambio? (opcional)</label>
           <textarea name="piensa" rows="2" placeholder="Percepción actual..."
-            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30"></textarea>
+            class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"></textarea>
         </div>
 
-        <div class="lg:p-2.5">
-          <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">Nivel ADKAR hoy <span class="text-red-500">*</span></label>
-          <select name="adkarHoy" required onchange="this.classList.remove('border-red-500','ring-2','ring-red-200')"
-            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30">
+        <div class="lg:p-3">
+          <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">Nivel ADKAR hoy <span class="text-rose-500">*</span></label>
+          <select name="adkarHoy" required onchange="this.classList.remove('border-rose-500','ring-2','ring-rose-200')"
+            class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition">
             ${buildOptions(ADKAR_HOY)}
           </select>
         </div>
 
-        <div class="lg:p-2.5">
-          <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">¿Dónde queremos que esté? <span class="text-red-500">*</span></label>
-          <select name="adkarObjetivo" required onchange="this.classList.remove('border-red-500','ring-2','ring-red-200')"
-            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30">
+        <div class="lg:p-3">
+          <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">¿Dónde queremos que esté? <span class="text-rose-500">*</span></label>
+          <select name="adkarObjetivo" required onchange="this.classList.remove('border-rose-500','ring-2','ring-rose-200')"
+            class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition">
             ${buildOptions(ADKAR_OBJETIVO)}
           </select>
         </div>
 
-        <div class="lg:p-2.5">
+        <div class="lg:p-3">
           <label class="lg:hidden block text-xs font-semibold text-slate-500 mb-1">¿Qué necesita de nosotros? (opcional)</label>
           <textarea name="necesita" rows="2" placeholder="Acciones o apoyo requerido..."
-            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30"></textarea>
+            class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/20 focus:border-[#1B2A4A] transition"></textarea>
         </div>
 
-        <div class="hidden lg:flex items-center justify-center pt-3">
+        <div class="hidden lg:flex items-center justify-center pt-4">
           <button type="button" onclick="removeRow(this)" title="Eliminar fila"
-            class="text-slate-400 hover:text-red-600 font-bold text-lg px-2 py-1 rounded transition cursor-pointer">
+            class="text-slate-400 hover:text-rose-600 font-bold text-lg w-8 h-8 rounded-lg hover:bg-rose-50 transition cursor-pointer flex items-center justify-center">
             &times;
           </button>
         </div>
@@ -417,25 +477,27 @@
       let hasError = false;
 
       rows.forEach(row => {
-        const stakeholderEl = row.querySelector('[name="stakeholder"]');
+        const nivel = row.dataset.nivel;
+        const stakeholder = row.dataset.stakeholder;
         const piensaEl = row.querySelector('[name="piensa"]');
         const adkarHoyEl = row.querySelector('[name="adkarHoy"]');
         const adkarObjetivoEl = row.querySelector('[name="adkarObjetivo"]');
         const necesitaEl = row.querySelector('[name="necesita"]');
 
         if (!adkarHoyEl.value) {
-          adkarHoyEl.classList.add("border-red-500", "ring-2", "ring-red-200");
+          adkarHoyEl.classList.add("border-rose-500", "ring-2", "ring-rose-200");
           hasError = true;
         }
         if (!adkarObjetivoEl.value) {
-          adkarObjetivoEl.classList.add("border-red-500", "ring-2", "ring-red-200");
+          adkarObjetivoEl.classList.add("border-rose-500", "ring-2", "ring-rose-200");
           hasError = true;
         }
 
         items.push({
           responsable,
           area,
-          stakeholder: stakeholderEl.value,
+          nivel,
+          stakeholder,
           piensa: piensaEl.value.trim(),
           adkarHoy: adkarHoyEl.value,
           adkarObjetivo: adkarObjetivoEl.value,
@@ -452,3 +514,89 @@
     }
 
     function showStatus(message, type = "success") {
+      const box = document.getElementById("statusMsg");
+      box.textContent = message;
+      box.className = "p-4 rounded-xl text-sm font-medium " + (
+        type === "success"
+          ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+          : "bg-rose-50 text-rose-800 border border-rose-200"
+      );
+      box.classList.remove("hidden");
+    }
+
+    function hideStatus() {
+      document.getElementById("statusMsg").classList.add("hidden");
+    }
+
+    function exportCSV() {
+      const data = collectAndValidate();
+      if (!data) return;
+
+      const headers = [
+        "Responsable",
+        "Área",
+        "Nivel",
+        "Stakeholder",
+        "¿Qué sabe o piensa hoy del cambio?",
+        "Nivel ADKAR hoy",
+        "¿Dónde queremos que esté?",
+        "¿Qué necesita de nosotros?"
+      ];
+
+      const escapeCSV = (val) => `"${String(val || "").replace(/"/g, '""')}"`;
+      const csvRows = [
+        headers.map(escapeCSV).join(";"),
+        ...data.map(r => [
+          r.responsable,
+          r.area,
+          r.nivel,
+          r.stakeholder,
+          r.piensa,
+          r.adkarHoy,
+          r.adkarObjetivo,
+          r.necesita
+        ].map(escapeCSV).join(";"))
+      ];
+
+      const blob = new Blob(["\uFEFF" + csvRows.join("\n")], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "mapeo_adkar_stakeholders.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+      showStatus("Archivo Excel (.csv) descargado correctamente.", "success");
+    }
+
+    async function submitData() {
+      const data = collectAndValidate();
+      if (!data) return;
+
+      if (!WEBHOOK_URL) {
+        showStatus("Aún no hay un destino conectado para guardar automáticamente. Usa 'Descargar Excel (.csv)' o conecta Power Automate / Google Sheets en WEBHOOK_URL.", "error");
+        return;
+      }
+
+      const btn = document.getElementById("submitBtn");
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fecha: new Date().toISOString(), registros: data })
+        });
+
+        if (!res.ok) throw new Error("Error en el envío");
+        showStatus("¡Respuestas enviadas correctamente! Gracias por participar.", "success");
+      } catch (err) {
+        showStatus("No se pudo enviar automáticamente. Puedes descargar el archivo Excel (.csv) como respaldo.", "error");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Enviar respuestas";
+      }
+    }
+  </script>
+</body>
+</html>
