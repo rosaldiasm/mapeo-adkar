@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paso 2 · Mapeo ADKAR por stakeholder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    textarea {
+      field-sizing: content;
+      min-height: 44px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+
+  <div class="max-w-7xl mx-auto">
+    <!-- Encabezado -->
+    <div class="mb-6">
+      <h1 class="text-2xl sm:text-3xl font-bold text-[#1B2A4A] tracking-tight">
+        Paso 2 · Mapeo ADKAR por stakeholder
+      </h1>
+      <p class="text-slate-600 mt-1 text-sm sm:text-base">
+        Para cada stakeholder prioritario: ¿dónde está hoy y dónde necesitamos que esté?
+      </p>
+    </div>
+
+    <!-- Datos de quien responde -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="responsable" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+          Tu nombre
+        </label>
+        <input
+          type="text"
+          id="responsable"
+          placeholder="Ej.: Juan Pérez"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"
+        />
+      </div>
+      <div>
+        <label for="area" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
+          Área / Unidad de negocio
+        </label>
+        <input
+          type="text"
+          id="area"
+          placeholder="Ej.: Operaciones / Terreno"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"
+        />
+      </div>
+    </div>
+
+    <!-- Tabla interactiva -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-left" id="adkarTable">
+          <thead>
+            <tr class="bg-[#1B2A4A] text-white text-xs sm:text-sm">
+              <th class="py-3.5 px-4 font-semibold w-[16%] min-w-[160px]">Stakeholder</th>
+              <th class="py-3.5 px-4 font-semibold w-[26%] min-w-[220px]">¿Qué sabe o piensa hoy del cambio?</th>
+              <th class="py-3.5 px-4 font-semibold w-[15%] min-w-[165px]">Nivel ADKAR hoy</th>
+              <th class="py-3.5 px-4 font-semibold w-[15%] min-w-[165px]">¿Dónde queremos que esté?</th>
+              <th class="py-3.5 px-4 font-semibold w-[24%] min-w-[220px]">¿Qué necesita de nosotros?</th>
+              <th class="py-3.5 px-2 font-semibold w-[4%] text-center"></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="divide-y divide-slate-200 text-sm">
+            <!-- Fila de ejemplo fija -->
+            <tr class="bg-[#FBEBD2]/80 text-slate-700 italic">
+              <td class="py-3 px-4 align-top font-medium">Ejemplo: [jefes de obra]</td>
+              <td class="py-3 px-4 align-top">Ve la innovación como algo corporativo, lejano a la obra</td>
+              <td class="py-3 px-4 align-top">Conciencia</td>
+              <td class="py-3 px-4 align-top">Habilidad</td>
+              <td class="py-3 px-4 align-top">Ejemplos de terreno y tiempo para probar</td>
+              <td class="py-3 px-2 text-center text-xs text-slate-400">Ref.</td>
+            </tr>
+            <!-- Las filas editables se generan dinámicamente con JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Barra inferior de acciones -->
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <button
+          type="button"
+          onclick="addRow()"
+          class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-[#1B2A4A] text-[#1B2A4A] bg-white hover:bg-slate-100 text-sm font-medium transition cursor-pointer"
+        >
+          <span>+ Agregar stakeholder</span>
+        </button>
+
+        <div class="flex flex-col sm:flex-row gap-2">
+          <button
+            type="button"
+            onclick="exportCSV()"
+            class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-100 text-sm font-medium transition cursor-pointer"
+          >
+            Descargar Excel (.csv)
+          </button>
+          <button
+            type="button"
+            id="submitBtn"
+            onclick="submitData()"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-lg bg-[#1B2A4A] text-white hover:bg-[#273c69] text-sm font-medium transition cursor-pointer"
+          >
+            Enviar respuestas
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensaje de estado -->
+    <div id="statusMsg" class="hidden mt-4 p-3 rounded-lg text-sm font-medium"></div>
+  </div>
+
+  <script>
+    // Si conectas Power Automate o Google Apps Script, pega aquí la URL del webhook:
+    const WEBHOOK_URL = "";
+
+    const ADKAR_HOY = [
+      "Ninguno / Desconoce",
+      "Conciencia",
+      "Deseo",
+      "Conocimiento",
+      "Habilidad",
+      "Refuerzo"
+    ];
+
+    const ADKAR_OBJETIVO = [
+      "Conciencia",
+      "Deseo",
+      "Conocimiento",
+      "Habilidad",
+      "Refuerzo"
+    ];
+
+    function buildOptions(options) {
+      return `<option value="" disabled selected>Seleccionar...</option>` +
+        options.map(opt => `<option value="${opt}">${opt}</option>`).join("");
+    }
+
+    function addRow() {
+      const tbody = document.getElementById("tableBody");
+      const tr = document.createElement("tr");
+      tr.className = "data-row bg-white hover:bg-slate-50/70 transition";
+
+      tr.innerHTML = `
+        <td class="p-2 align-top">
+          <input type="text" name="stakeholder" placeholder="Ej.: Administradores de obra"
+            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]" />
+        </td>
+        <td class="p-2 align-top">
+          <textarea name="piensa" rows="2" placeholder="Percepción actual..."
+            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"></textarea>
+        </td>
+        <td class="p-2 align-top">
+          <select name="adkarHoy"
+            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]">
+            ${buildOptions(ADKAR_HOY)}
+          </select>
+        </td>
+        <td class="p-2 align-top">
+          <select name="adkarObjetivo"
+            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]">
+            ${buildOptions(ADKAR_OBJETIVO)}
+          </select>
+        </td>
+        <td class="p-2 align-top">
+          <textarea name="necesita" rows="2" placeholder="Acciones o apoyo requerido..."
+            class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]/30 focus:border-[#1B2A4A]"></textarea>
+        </td>
+        <td class="p-2 align-middle text-center">
+          <button type="button" onclick="removeRow(this)" title="Eliminar fila"
+            class="text-slate-400 hover:text-red-600 font-bold text-lg px-2 py-1 rounded transition cursor-pointer">
+            &times;
+          </button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    function removeRow(btn) {
+      const rows = document.querySelectorAll(".data-row");
+      if (rows.length <= 1) {
+        showStatus("Debe quedar al menos una fila disponible.", "error");
+        return;
+      }
+      btn.closest("tr").remove();
+    }
+
+    function collectData() {
+      const responsable = document.getElementById("responsable").value.trim();
+      const area = document.getElementById("area").value.trim();
+      const rows = document.querySelectorAll(".data-row");
+      const items = [];
+
+      rows.forEach(row => {
+        const stakeholder = row.querySelector('[name="stakeholder"]').value.trim();
+        const piensa = row.querySelector('[name="piensa"]').value.trim();
+        const adkarHoy = row.querySelector('[name="adkarHoy"]').value;
+        const adkarObjetivo = row.querySelector('[name="adkarObjetivo"]').value;
+        const necesita = row.querySelector('[name="necesita"]').value.trim();
+
+        if (stakeholder || piensa || adkarHoy || adkarObjetivo || necesita) {
+          items.push({
+            responsable,
+            area,
+            stakeholder,
+            piensa,
+            adkarHoy,
+            adkarObjetivo,
+            necesita
+          });
+        }
+      });
+
+      return items;
+    }
+
+    function showStatus(message, type = "success") {
+      const box = document.getElementById("statusMsg");
+      box.textContent = message;
+      box.className = "mt-4 p-3 rounded-lg text-sm font-medium " + (
+        type === "success"
+          ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+          : "bg-red-50 text-red-800 border border-red-200"
+      );
+      box.classList.remove("hidden");
+    }
+
+    function exportCSV() {
+      const data = collectData();
+      if (data.length === 0) {
+        showStatus("Completa al menos un stakeholder antes de descargar.", "error");
+        return;
+      }
+
+      const headers = [
+        "Responsable",
+        "Área",
+        "Stakeholder",
+        "¿Qué sabe o piensa hoy del cambio?",
+        "Nivel ADKAR hoy",
+        "¿Dónde queremos que esté?",
+        "¿Qué necesita de nosotros?"
+      ];
+
+      const escapeCSV = (val) => `"${String(val || "").replace(/"/g, '""')}"`;
+      const csvRows = [
+        headers.map(escapeCSV).join(";"),
+        ...data.map(r => [
+          r.responsable,
+          r.area,
+          r.stakeholder,
+          r.piensa,
+          r.adkarHoy,
+          r.adkarObjetivo,
+          r.necesita
+        ].map(escapeCSV).join(";"))
+      ];
+
+      // BOM UTF-8 para que Excel en español lea bien tildes y ñ
+      const blob = new Blob(["\uFEFF" + csvRows.join("\n")], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "mapeo_adkar_stakeholders.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+      showStatus("Archivo Excel (.csv) descargado correctamente.", "success");
+    }
+
+    async function submitData() {
+      const data = collectData();
+      if (data.length === 0) {
+        showStatus("Completa al menos un stakeholder antes de enviar.", "error");
+        return;
+      }
+
+      if (!WEBHOOK_URL) {
+        showStatus("Aún no hay un servidor conectado. Usa 'Descargar Excel (.csv)' o pega tu URL de Power Automate / Google Sheets en WEBHOOK_URL.", "error");
+        return;
+      }
+
+      const btn = document.getElementById("submitBtn");
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fecha: new Date().toISOString(), registros: data })
+        });
+
+        if (!res.ok) throw new Error("Error en el envío");
+        showStatus("¡Respuestas enviadas correctamente! Gracias por participar.", "success");
+      } catch (err) {
+        showStatus("No se pudo enviar automáticamente. Puedes descargar el archivo Excel (.csv) como respaldo.", "error");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Enviar respuestas";
+      }
+    }
+
+    // Iniciar con 3 filas vacías
+    addRow();
+    addRow();
+    addRow();
+  </script>
+</body>
+</html>
